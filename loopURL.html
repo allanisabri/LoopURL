@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+  <!-- HTML Form -->
+  <div class="container mt-5">
+    <h2>Open Multiple Tabs</h2>
+    <form>
+      <div class="form-group">
+        <label for="numTabs">Number of Tabs:</label>
+        <input type="number" class="form-control" id="numTabs" min="1">
+      </div>
+      <div class="form-group">
+        <label for="url">URL:</label>
+        <input type="text" class="form-control" id="url" placeholder="Enter URL">
+      </div>
+      <button type="button" class="btn btn-primary" id="openTabsBtn">Open Tabs</button>
+    </form>
+  </div>
+
+  <!-- Include Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.16.6/dist/umd/popper.min.js" integrity="sha384-jZ1jvC7bBZPz9XQbFJG+jK1wquAfLzB+1sZjllsJvzVlNVgOf9f8VyW/tRoReTt3" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  <!-- JavaScript -->
+  <script>
+
+  const numTabsInput = document.getElementById('numTabs');
+  const urlInput = document.getElementById('url');
+  const openTabsBtn = document.getElementById('openTabsBtn');
+
+  // Add event listener to button
+  openTabsBtn.addEventListener('click', function() {
+    // Get number of tabs and URL from inputs
+    const numTabs = numTabsInput.value;
+    const url = urlInput.value;
+
+    // Open specified number of tabs
+    for (let i = 0; i < numTabs; i++) {
+      window.open(url);
+    }
+  });
+</script>
+
